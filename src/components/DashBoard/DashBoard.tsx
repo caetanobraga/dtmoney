@@ -5,8 +5,6 @@ export const DashBoard = () => {
   return (
     <Container>
       <Sumary />
-      <Sumary />
-      <Sumary />
     </Container>
   );
 };
