@@ -1,6 +1,14 @@
 import Modal from 'react-modal';
 import CloseIcon from '@mui/icons-material/Close';
-import { Container } from './newTransactionalModal.styles';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+
+import {
+  Container,
+  TransactionTypeContainer,
+  RadioBox,
+} from './newTransactionalModal.styles';
+import { useState } from 'react';
 
 interface NewTransactionalModalProps {
   isOpen: boolean;
@@ -11,6 +19,7 @@ export const NewTransactionalModal = ({
   isOpen,
   onRequestClose,
 }: NewTransactionalModalProps) => {
+  const [type, setType] = useState('deposit');
   return (
     <Modal
       isOpen={isOpen}
@@ -29,6 +38,31 @@ export const NewTransactionalModal = ({
         <h2>Cadastrar transação</h2>
         <input placeholder="Título" />
         <input type="number" placeholder="Valor" />
+
+        <TransactionTypeContainer>
+          <RadioBox
+            type="button"
+            onClick={() => {
+              setType('deposit');
+            }}
+            isActive={type === 'deposit'}
+            activeColor="green"
+          >
+            <ArrowUpwardIcon color="success" />
+            <span>Entrada</span>
+          </RadioBox>
+          <RadioBox
+            type="button"
+            onClick={() => {
+              setType('withdraw');
+            }}
+            isActive={type === 'withdraw'}
+            activeColor="red"
+          >
+            <ArrowDownwardIcon color="error" />
+            <span>Saída</span>
+          </RadioBox>
+        </TransactionTypeContainer>
         <input placeholder="Categoria" />
         <button type="submit">Cadastrar</button>
       </Container>
