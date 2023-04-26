@@ -22,5 +22,13 @@ export const Container = styled.div`
       color: var(--text-body);
       border-radius: 0%.25rem;
     }
+
+    .deposit {
+      color: var(--blue);
+    }
+
+    .withdraw {
+      color: var(--red);
+    }
   }
 `;

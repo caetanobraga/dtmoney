@@ -7,6 +7,53 @@ createServer({
     transaction: Model,
   },
 
+  seeds(server) {
+    server.db.loadData({
+      transactions: [
+        {
+          id: 1,
+          title: 'freela de site',
+          type: 'deposit',
+          category: 'Dev',
+          amount: 6000,
+          createdAt: new Date('2021-05-11 09:00:00'),
+        },
+        {
+          id: 2,
+          title: 'agua',
+          type: 'withdraw',
+          category: 'conta',
+          amount: 150,
+          createdAt: new Date('2023-05-11 09:00:00'),
+        },
+        {
+          id: 3,
+          title: 'freela de site',
+          type: 'deposit',
+          category: 'Dev',
+          amount: 6000,
+          createdAt: new Date('2021-05-11 09:00:00'),
+        },
+        {
+          id: 4,
+          title: 'freela de site',
+          type: 'deposit',
+          category: 'Dev',
+          amount: 6000,
+          createdAt: new Date('2021-05-11 09:00:00'),
+        },
+        {
+          id: 5,
+          title: 'freela de site',
+          type: 'deposit',
+          category: 'Dev',
+          amount: 6000,
+          createdAt: new Date('2021-05-11 09:00:00'),
+        },
+      ],
+    });
+  },
+
   routes() {
     this.namespace = 'api';
 
