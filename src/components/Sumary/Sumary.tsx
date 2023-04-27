@@ -1,9 +1,13 @@
+import { useContext } from 'react';
 import { Container } from './sumary.styles';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import { TransactionsContext } from '../../TransactionsContext';
 
 export const Sumary = () => {
+  const { transactions } = useContext(TransactionsContext);
+
   return (
     <Container>
       <div>
